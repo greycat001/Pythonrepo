@@ -3,6 +3,7 @@ FROM alpine:3.5
 
 # Install python and pip
 RUN apk add --update py2-pip
+RUN pip install --upgrade pip
 RUN pip install Flask
 
 # install Python modules needed by the Python app
