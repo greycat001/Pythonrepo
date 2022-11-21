@@ -3,9 +3,11 @@ FROM alpine:3.5
 
 # Install python and pip
 RUN apk add --update py2-pip
+RUN sudo apt install python-virtualenv
+RUN pip install Flask
 
 # install Python modules needed by the Python app
-pip3 freeze > requirements.txt  
+RUN pip3 freeze > requirements.txt  
 COPY requirements.txt /usr/src/app/
 RUN pip install --no-cache-dir -r /usr/src/app/requirements.txt
 
