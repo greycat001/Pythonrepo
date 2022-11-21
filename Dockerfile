@@ -6,7 +6,7 @@ RUN apk add --update py2-pip
 RUN pip install Flask
 
 # install Python modules needed by the Python app
-RUN pip3 freeze > requirements.txt  
+RUN pip freeze > requirements.txt  
 COPY requirements.txt /usr/src/app/
 RUN pip install --no-cache-dir -r /usr/src/app/requirements.txt
 
