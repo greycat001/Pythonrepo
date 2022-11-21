@@ -5,18 +5,16 @@ app = Flask(__name__)
 
 # list of cat images
 images = [
-    "http://ak-hdl.buzzfed.com/static/2013-10/enhanced/webdr05/15/9/anigif_enhanced-buzz-26388-1381844103-11.gif",
-    "http://ak-hdl.buzzfed.com/static/2013-10/enhanced/webdr01/15/9/anigif_enhanced-buzz-31540-1381844535-8.gif",
-    "http://ak-hdl.buzzfed.com/static/2013-10/enhanced/webdr05/15/9/anigif_enhanced-buzz-26390-1381844163-18.gif",
-    "http://ak-hdl.buzzfed.com/static/2013-10/enhanced/webdr06/15/10/anigif_enhanced-buzz-1376-1381846217-0.gif",
-    "http://ak-hdl.buzzfed.com/static/2013-10/enhanced/webdr03/15/9/anigif_enhanced-buzz-3391-1381844336-26.gif",
-    "http://ak-hdl.buzzfed.com/static/2013-10/enhanced/webdr06/15/10/anigif_enhanced-buzz-29111-1381845968-0.gif",
-    "http://ak-hdl.buzzfed.com/static/2013-10/enhanced/webdr03/15/9/anigif_enhanced-buzz-3409-1381844582-13.gif",
-    "http://ak-hdl.buzzfed.com/static/2013-10/enhanced/webdr02/15/9/anigif_enhanced-buzz-19667-1381844937-10.gif",
-    "http://ak-hdl.buzzfed.com/static/2013-10/enhanced/webdr05/15/9/anigif_enhanced-buzz-26358-1381845043-13.gif",
-    "http://ak-hdl.buzzfed.com/static/2013-10/enhanced/webdr06/15/9/anigif_enhanced-buzz-18774-1381844645-6.gif",
-    "http://ak-hdl.buzzfed.com/static/2013-10/enhanced/webdr06/15/9/anigif_enhanced-buzz-25158-1381844793-0.gif",
-    "http://ak-hdl.buzzfed.com/static/2013-10/enhanced/webdr03/15/10/anigif_enhanced-buzz-11980-1381846269-1.gif"
+    "https://live.staticflickr.com/2712/4480686543_2983b9ffdd_o.jpg",
+    "https://live.staticflickr.com/4027/4480686311_fb8f853abd_o.jpg",
+    "https://live.staticflickr.com/3847/14707542225_221219af92_o.jpg",
+    "https://live.staticflickr.com/8147/7450112678_e2bc18c14b_k.jpg",
+    "https://live.staticflickr.com/8481/29068166132_3b3460e983_h.jpg",
+    "https://live.staticflickr.com/7336/9649943430_bdb2fccb29_o.jpg",
+    "https://live.staticflickr.com/3784/13735475843_6e956fd202_o.jpg",
+    "https://live.staticflickr.com/2290/2063451702_7ae5336d28_o.jpg",
+    "https://live.staticflickr.com/8651/16621333722_2f9e4a6ed8_o.jpg",
+    "https://live.staticflickr.com/2312/1947165002_03a6383e1c_o.jpg"
 ]
 
 @app.route('/')
