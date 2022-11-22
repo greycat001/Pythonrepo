@@ -8,6 +8,7 @@ RUN pip install Flask
 
 # install Python modules needed by the Python app
 RUN pip freeze > requirements.txt
+RUN RUN find . -type f -name requirements.txt | xargs ls -ltra
 COPY /requirements.txt /usr/src/app/
 RUN pip install --no-cache-dir -r /usr/src/app/requirements.txt
 
