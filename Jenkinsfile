@@ -27,7 +27,7 @@ pipeline {
 //          sh "docker push ${imageName}"
 //        }
         script {
-          docker.withRegistry('http://127.0.0.1:12000/artifactory/app1/', 'AF_Access') {
+          docker.withRegistry('http://192.168.50.7:8082/artifactory/app1/', 'AF_Access') {
             /* Push the container to the custom Registry */
             dockerImage.push()
           }
