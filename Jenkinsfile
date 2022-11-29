@@ -1,3 +1,5 @@
+imageName = 'abcpoi/myphythonapp'
+
 pipeline {
   agent any
   options {
@@ -12,7 +14,10 @@ pipeline {
     }
     stage('Build') {
       steps {
-        sh "sudo docker build . -t abcpoi/myphythonapp"
+//        sh "sudo docker build . -t ${imageName}"
+        script{
+          def dockerImage = docker.build imageName
+        }
       }
     }
   }
