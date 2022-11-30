@@ -24,7 +24,7 @@ pipeline {
       steps {
 //        withCredentials([usernamePassword(credentialsId: 'AF_Access', passwordVariable: 'AFPass', usernameVariable: 'AFUser')]) {
         withCredentials([usernamePassword(credentialsId: 'DockehubCredentials', passwordVariable: 'AFPass', usernameVariable: 'AFUser')]) {
-          sh "docker login -u ${env.AFUser} -p ${env.AFPass}"
+          sh 'docker login -u $env.AFUser -p $env.AFPass'
           sh "docker push ${imageName}"
         }
 //        script {
