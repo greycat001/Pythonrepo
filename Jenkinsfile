@@ -22,9 +22,10 @@ pipeline {
     }
     stage('Docker Push') {
       steps {
-//        withCredentials([usernamePassword(credentialsId: 'AF_Access', passwordVariable: 'AFPass', usernameVariable: 'AFUser')]) {
-        withCredentials([usernamePassword(credentialsId: 'DockehubCredentials', passwordVariable: 'AFPass', usernameVariable: 'AFUser')]) {
-          sh 'sudo docker login -u $AFUser -p $AFPass'
+        withCredentials([usernamePassword(credentialsId: 'AF_Access', passwordVariable: 'AFPass', usernameVariable: 'AFUser')]) {
+//        withCredentials([usernamePassword(credentialsId: 'DockehubCredentials', passwordVariable: 'AFPass', usernameVariable: 'AFUser')]) {
+//          sh 'sudo docker login -u $AFUser -p $AFPass'
+          sh 'sudo docker login -u $AFUser -p $AFPass http://192.168.50.7:8082/artifactory/app1/'
           sh "sudo docker push ${imageName}"
         }
 //        script {
