@@ -14,18 +14,18 @@ pipeline {
     }
     stage('Build') {
       steps {
-//        sh "sudo docker build . -t ${imageName}"
-        script{
-          def dockerImage = docker.build imageName
-        }
+        sh "sudo docker build . -t ${imageName}"
+//        script{
+//          def dockerImage = docker.build imageName
+//        }
       }
     }
     stage('Docker Push') {
       steps {
 //        withCredentials([usernamePassword(credentialsId: 'AF_Access', passwordVariable: 'AFPass', usernameVariable: 'AFUser')]) {
         withCredentials([usernamePassword(credentialsId: 'DockehubCredentials', passwordVariable: 'AFPass', usernameVariable: 'AFUser')]) {
-          sh 'docker login -u $env.AFUser -p $env.AFPass'
-          sh "docker push ${imageName}"
+          sh 'sudo docker login -u $env.AFUser -p $env.AFPass'
+          sh "sudo docker push ${imageName}"
         }
 //        script {
 //          docker.withRegistry('http://192.168.50.7:8082/artifactory/app1/', 'AF_Access') {
