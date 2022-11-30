@@ -26,12 +26,12 @@ pipeline {
           sh "docker login -u ${env.AFUser} -p ${env.AFPass}"
           sh "docker push ${imageName}"
         }
-        script {
+//        script {
 //          docker.withRegistry('http://192.168.50.7:8082/artifactory/app1/', 'AF_Access') {
             /* Push the container to the custom Registry */
 //            dockerImage.push()
-          }
-        }
+//          }
+//        }
       }
     }
   }
