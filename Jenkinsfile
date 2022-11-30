@@ -22,14 +22,14 @@ pipeline {
     }
     stage('Docker Push') {
       steps {
-//        withCredentials([usernamePassword(credentialsId: 'AF_Access', passwordVariable: 'AFPass', usernameVariable: //'AFUser')]) {
-//          sh "docker login -u ${env.AFUser} -p ${env.AFPass}"
-//          sh "docker push ${imageName}"
-//        }
+        withCredentials([usernamePassword(credentialsId: 'AF_Access', passwordVariable: 'AFPass', usernameVariable: //'AFUser')]) {
+          sh "docker login -u ${env.AFUser} -p ${env.AFPass}"
+          sh "docker push ${imageName}"
+        }
         script {
-          docker.withRegistry('http://192.168.50.7:8082/artifactory/app1/', 'AF_Access') {
+//          docker.withRegistry('http://192.168.50.7:8082/artifactory/app1/', 'AF_Access') {
             /* Push the container to the custom Registry */
-            dockerImage.push()
+//            dockerImage.push()
           }
         }
       }
