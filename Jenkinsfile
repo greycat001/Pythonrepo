@@ -22,7 +22,7 @@ pipeline {
     }
     stage('Docker Push') {
       steps {
-        withCredentials([usernamePassword(credentialsId: 'AF_Access', passwordVariable: 'AFPass', usernameVariable: //'AFUser')]) {
+        withCredentials([usernamePassword(credentialsId: 'AF_Access', passwordVariable: 'AFPass', usernameVariable: 'AFUser')]) {
           sh "docker login -u ${env.AFUser} -p ${env.AFPass}"
           sh "docker push ${imageName}"
         }
