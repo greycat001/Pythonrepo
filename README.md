@@ -46,7 +46,7 @@ sudo docker run -it --rm -p 8088:8080 tomcat
 
 sudo docker run -d dockersamples/static-site
 sudo docker stop 6a3884611cc6
-sudo docker ps �> to know the running containers
+sudo docker ps -a to know the running containers
 sudo docker rm  6a3884611cc6
 sudo docker run --name static-site -e AUTHOR="Your Name" -d -P dockersamples/static-site
 sudo docker port static-site
