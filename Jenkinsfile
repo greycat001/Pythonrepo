@@ -24,7 +24,7 @@ pipeline {
       steps {
         script {
           docker.withRegistry('http://192.168.50.7:8070/myDockerRepo', 'Nexus1Access') {
-          /* Push the container to the custom Registry */
+            /* Push the container to the custom Registry */
             dockerImage.push()
           }
         }
