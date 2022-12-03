@@ -25,7 +25,7 @@ pipeline {
         withCredentials([usernamePassword(credentialsId: 'Nexus1Access', passwordVariable: 'RepoPass', usernameVariable: 'RepoUser')]) {
 
           sh 'sudo docker login -u $RepoUser -p $RepoPass http://192.168.50.7:8070/repository/myDockerRepo'
-          sh "sudo docker push ${imageName}"
+          sh "sudo docker push docker push 192.168.50.7:8070/repository/myDockerRepo/${imageName}"
         }
 //        nexusArtifactUploader artifacts: [[artifactId: 'ArtifactId', classifier: '', file: 'file.gz', type: 'gz']], \
 //                              credentialsId: 'Nexus1Access', \
