@@ -1,4 +1,4 @@
-imageName = 'abcpoi/myphythonapp'
+imageName = 'abcpoi/mypythonapp'
 
 pipeline {
   agent any
@@ -22,12 +22,19 @@ pipeline {
     }
     stage('Docker Push') {
       steps {
-        withCredentials([usernamePassword(credentialsId: 'AF_Access', passwordVariable: 'AFPass', usernameVariable: 'AFUser')]) {
-//        withCredentials([usernamePassword(credentialsId: 'DockehubCredentials', passwordVariable: 'AFPass', usernameVariable: 'AFUser')]) {
-//          sh 'sudo docker login -u $AFUser -p $AFPass'
-          sh 'sudo docker login -u $AFUser -p $AFPass http://192.168.50.7:8082/artifactory/app1/'
+        withCredentials([usernamePassword(credentialsId: 'Nexus1Access', passwordVariable: 'RepoPass', usernameVariable: 'RepoUser')]) {
+
+          sh 'sudo docker login -u $RepoUser -p $RepoPass http://192.168.50.7:8070/repository/myDockerRepo'
           sh "sudo docker push ${imageName}"
         }
+//        nexusArtifactUploader artifacts: [[artifactId: 'ArtifactId', classifier: '', file: 'file.gz', type: 'gz']], \
+//                              credentialsId: 'Nexus1Access', \
+//                              groupId: 'pythonapp', \
+//                              nexusUrl: 'http://192.168.50.7:8081', \
+//                              nexusVersion: 'nexus3', \
+//                              protocol: 'http', \
+//                              repository: 'myDockerRepo', \
+//                              version: '1.0.0'
 //        script {
 //          docker.withRegistry('http://192.168.50.7:8082/artifactory/app1/', 'AF_Access') {
             /* Push the container to the custom Registry */
