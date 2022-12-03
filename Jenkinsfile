@@ -1,4 +1,5 @@
 imageName = 'abcpoi/mypythonapp'
+def dockerImage
 
 pipeline {
   agent any
@@ -16,7 +17,7 @@ pipeline {
       steps {
 //        sh "sudo docker build . -t ${imageName}"
         script{
-          def dockerImage = docker.build imageName
+          dockerImage = docker.build imageName
         }
       }
     }
