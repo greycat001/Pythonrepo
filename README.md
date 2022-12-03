@@ -14,7 +14,7 @@ How to run application?
 sudo docker run -p 8081:5000 --rm --name myfirstApp1 your_docker_user_id/myphythonapp
 now go to browser enter the public dns name with port no 8081.  
 
-### if you would like to run on differet port 
+### if you would like to run on different port 
 sudo docker run -p 8091:5000 --rm --name myfirstApp2 your_docker_user_id/myphythonapp
 Make sure you open port 8091 in security firewall rules.
 
